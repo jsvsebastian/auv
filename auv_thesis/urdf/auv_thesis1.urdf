@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<robot
+  name="auv_thesis">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0586155279728753 -0.0002778337208037 -0.0527335438287524"
+        rpy="0 0 0" />
+      <mass
+        value="3.75925971759131" />
+      <inertia
+        ixx="0.0324715328848579"
+        ixy="-0.000206513851360736"
+        ixz="0.000147805781710082"
+        iyy="0.0465919583736919"
+        iyz="-2.14143696241248E-05"
+        izz="0.0753795874759094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="v_r">
+    <inertial>
+      <origin
+        xyz="-6.3371E-05 3.8911E-08 -0.012"
+        rpy="0 0 0" />
+      <mass
+        value="0.0083623" />
+      <inertia
+        ixx="1.4721E-06"
+        ixy="1.992E-12"
+        ixz="4.2767E-09"
+        iyy="1.4721E-06"
+        iyz="-6.5919E-13"
+        izz="2.2826E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/v_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/v_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="v_ri"
+    type="continuous">
+    <origin
+      xyz="0.059956 -0.10498 -0.043412"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="v_r" />
+    <axis
+      xyz="-0.0052792 0 -0.99999" />
+  </joint>
+  <link
+    name="v_l">
+    <inertial>
+      <origin
+        xyz="6.33711607749277E-05 -3.89105577203175E-08 -0.0119997917971006"
+        rpy="0 0 0" />
+      <mass
+        value="0.00836226850056704" />
+      <inertia
+        ixx="1.47207470853917E-06"
+        ixy="1.99198843121598E-12"
+        ixz="-4.27668148605737E-09"
+        iyy="1.47207951712747E-06"
+        iyz="6.59190877690808E-13"
+        izz="2.28264110425923E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/v_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/v_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="v_le"
+    type="continuous">
+    <origin
+      xyz="0.060044 0.10464 -0.043412"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="v_l" />
+    <axis
+      xyz="-0.0052792 0 0.99999" />
+  </joint>
+  <link
+    name="h_r">
+    <inertial>
+      <origin
+        xyz="-0.0119997917971007 3.8910558275429E-08 6.33711607753717E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00836226850056714" />
+      <inertia
+        ixx="2.28264110425927E-06"
+        ixy="-6.59190884392082E-13"
+        ixz="-4.27668148604112E-09"
+        iyy="1.47207951712749E-06"
+        iyz="-1.99198844959993E-12"
+        izz="1.47207470853921E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/h_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/h_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="h_ri"
+    type="continuous">
+    <origin
+      xyz="-0.1393 -0.066548 -0.045654"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="h_r" />
+    <axis
+      xyz="0.99999 0 -0.0052792" />
+  </joint>
+  <link
+    name="h_l">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/h_l.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auv_thesis/meshes/h_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="h_le"
+    type="continuous">
+    <origin
+      xyz="-0.139299559645515 0.0669030275074937 -0.0457412172900467"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="h_l" />
+    <axis
+      xyz="0.999986064874679 0 0.00527920983233712" />
+  </joint>
+  <ros2_control name="IgnitionSystem" type="system">
+  <hardware>
+    <plugin>ign_ros2_control/IgnitionSystem</plugin>
+  </hardware>
+  <joint name="v_ri">
+    <command_interface name="effort">
+      <param name="min">-1000</param>
+      <param name="max">1000</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">1.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+    <state_interface name="effort"/>
+  </joint>
+   <joint name="v_le">
+    <command_interface name="effort">
+      <param name="min">-1000</param>
+      <param name="max">1000</param>
+    </command_interface>
+    <state_interface name="position">
+      <param name="initial_value">1.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+    <state_interface name="effort"/>
+  </joint>
+</ros2_control>
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control"> 
+     <parameters>$(find auv_thesis_control)/config/controller_configuration.yaml</parameters>
+    </plugin>
+  </gazebo>  
+</robot>
